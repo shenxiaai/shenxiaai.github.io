@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo搭建Github博客 | 元宝君的时光</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作为一名前端居然没有一个自己的个人网站简直low啊，元宝工作这么久一直想有一个自己的个人网站，之前有试过Github提供的Github Page创建个站，不过全部框架需要自己写，本君（最近深中“三生三世”的毒）平时工作也没有时间设计页面，所以那个网站就不了了之了。这里有一个学习 Github Page 教你分分钟搭建自己的博客的教程可以参考。 后来偶然间看到hexo搭配Github可以搭建一个有设">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建Github博客">
+<meta property="og:url" content="http://yoursite.com/2016/11/12/useHexoToBuildBlog/index.html">
+<meta property="og:site_name" content="元宝君的时光">
+<meta property="og:description" content="作为一名前端居然没有一个自己的个人网站简直low啊，元宝工作这么久一直想有一个自己的个人网站，之前有试过Github提供的Github Page创建个站，不过全部框架需要自己写，本君（最近深中“三生三世”的毒）平时工作也没有时间设计页面，所以那个网站就不了了之了。这里有一个学习 Github Page 教你分分钟搭建自己的博客的教程可以参考。 后来偶然间看到hexo搭配Github可以搭建一个有设">
+<meta property="og:image" content="http://yoursite.com/assets/images/img9.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img2.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img3.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img4.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img1.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img5.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img6.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img8.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img7.png">
+<meta property="og:image" content="http://yoursite.com/assets/images/img13.png">
+<meta property="og:updated_time" content="2017-12-22T08:51:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo搭建Github博客">
+<meta name="twitter:description" content="作为一名前端居然没有一个自己的个人网站简直low啊，元宝工作这么久一直想有一个自己的个人网站，之前有试过Github提供的Github Page创建个站，不过全部框架需要自己写，本君（最近深中“三生三世”的毒）平时工作也没有时间设计页面，所以那个网站就不了了之了。这里有一个学习 Github Page 教你分分钟搭建自己的博客的教程可以参考。 后来偶然间看到hexo搭配Github可以搭建一个有设">
+<meta name="twitter:image" content="http://yoursite.com/assets/images/img9.png">
+  
+    <link rel="alternate" href="/atom.xml" title="元宝君的时光" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+        <header id="post-header">
+    <div id="post-banner"></div>
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <!-- <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai" title="RSS Feed"></a> -->
+                    <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+                
+                <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+      
+      <div class="outer">
+        <section id="main"><article id="post-useHexoToBuildBlog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/12/useHexoToBuildBlog/" class="article-date">
+  <time datetime="2016-11-11T16:00:00.000Z" itemprop="datePublished">2016-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 id="post-article-title" class="article-title" itemprop="name">
+      Hexo搭建Github博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为一名前端居然没有一个自己的个人网站简直low啊，元宝工作这么久一直想有一个自己的个人网站，之前有试过Github提供的<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Page</a>创建个站，不过全部框架需要自己写，本君（最近深中“三生三世”的毒）平时工作也没有时间设计页面，所以那个网站就不了了之了。这里有一个<a href="https://github.com/dwqs/blog" target="_blank" rel="noopener">学习 Github Page 教你分分钟搭建自己的博客</a>的教程可以参考。</p>
+<p>后来偶然间看到hexo搭配Github可以搭建一个有设计有框架的使用blog，元宝想都没想直接开始啦！特此用这篇文章记录一下完成的过程。</p>
+<a id="more"></a>
+<h2 id="安装Node"><a href="#安装Node" class="headerlink" title="安装Node"></a>安装Node</h2><p>到<a href="http://nodejs.cn/" target="_blank" rel="noopener">Node.js官网</a>下载相应平台的最新版本，一路安装即可。</p>
+<h2 id="安装Git-bash"><a href="#安装Git-bash" class="headerlink" title="安装Git bash"></a>安装Git bash</h2><p>用于把本地的hexo内容提交到github上去.</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Node和Git bash都安装好后,本地创建一个文件夹,如myBlog,用于存放hexo的配置文件,然后进入myBlog里安装Hexo:</p>
+<p><code>npm install -g hexo</code></p>
+<h2 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h2><p><code>hexo init</code></p>
+<h2 id="利用hexo指令安装一个完整的hexo项目"><a href="#利用hexo指令安装一个完整的hexo项目" class="headerlink" title="利用hexo指令安装一个完整的hexo项目"></a>利用hexo指令安装一个完整的hexo项目</h2><p><code>hexo generate（简写：hexo g)</code></p>
+<h2 id="在本地运行hexo项目"><a href="#在本地运行hexo项目" class="headerlink" title="在本地运行hexo项目"></a>在本地运行hexo项目</h2><p><code>hexo server(简写：hexo s)</code></p>
+<blockquote>
+<p>注意：运行hexo s后出现页面打不开的情况时，先检查端口号是否被占用。hexo项目默认端口号为<strong>4000</strong>。如果电脑上安装了<strong>“福昕阅读器”</strong>，4000端口就被该软件占用了。</p>
+</blockquote>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h3><p><code>hexo s -p 5000 (换个新的未使用的端口号)</code></p>
+<hr>
+<p>现在我们本地的hexo博客项目已经创建好了，看一下我们的项目结构：</p>
+<p><img src="/assets/images/img9.png" alt=""></p>
+<p>在浏览器上打开：<a href="localhost:5000" target="_blank" rel="noopener">localhost:5000</a></p>
+<p>** mac上似乎端口号是4000</p>
+<p><img src="/assets/images/img2.png" alt=""></p>
+<p>此时项目的框架主题用的是最初默认的：<strong>landscape</strong></p>
+<p>本宝觉得这个主题实在太单调了，百度了一个比较喜欢的主题： <strong>yilia</strong></p>
+<h2 id="更换主题yilia"><a href="#更换主题yilia" class="headerlink" title="更换主题yilia"></a>更换主题yilia</h2><h3 id="打开yilia的Github主页"><a href="#打开yilia的Github主页" class="headerlink" title="打开yilia的Github主页"></a>打开<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a>的Github主页</h3><h3 id="安装yilia主题"><a href="#安装yilia主题" class="headerlink" title="安装yilia主题"></a>安装yilia主题</h3><p>在git bash命令行中进入hexo创建的项目中，如本宝的：myBlog路径</p>
+<p>执行安装命令：</p>
+<p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
+<h3 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h3><p><img src="/assets/images/img3.png" alt=""></p>
+<p>修改hexo根目录下的 _config.yml ： theme: yilia</p>
+<p><img src="/assets/images/img4.png" alt=""></p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/yilia</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/images/img1.png" alt=""></p>
+<p>完成后效果如下：</p>
+<p><img src="/assets/images/img5.png" alt=""></p>
+<p>很多自定义框架的部分，都可以在项目根目录下的——config.yml文件中修改。</p>
+<hr>
+<p>好啦，本地的博客项目已经搭建好啦，怎样把它部署到Github上用Github域名访问我们的博客呢？</p>
+<h3 id="创建Github账号"><a href="#创建Github账号" class="headerlink" title="创建Github账号"></a>创建Github账号</h3><p>这个不用我说了吧，直接去Github官网注册就好啦，以前有的就直接用咯。</p>
+<h3 id="创建git仓库"><a href="#创建git仓库" class="headerlink" title="创建git仓库"></a>创建git仓库</h3><p><img src="/assets/images/img6.png" alt=""></p>
+<blockquote>
+<p>注意：仓库名必须为: <strong>yourGithubUsername.github.io</strong></p>
+</blockquote>
+<p>这样可以保证自己的博客可以用： <strong><a href="https://yourGithubUsername.github.io/" target="_blank" rel="noopener">https://yourGithubUsername.github.io/</a></strong> 直接访问</p>
+<h3 id="关联自己的Github账号"><a href="#关联自己的Github账号" class="headerlink" title="关联自己的Github账号"></a>关联自己的Github账号</h3><p>打开根目录下的_config.yml文件，翻到最下面：</p>
+<p><img src="/assets/images/img8.png" alt=""></p>
+<p>修改deploy配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/yourGithubUsername/yourGithubUsername.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="上传hexo博客项目"><a href="#上传hexo博客项目" class="headerlink" title="上传hexo博客项目"></a>上传hexo博客项目</h3><p>首先安装上传指令，在根目录下执行：</p>
+<p><code>npm install hexo-deployer-git --save（hexo 3.0版本后执行此句无BUG）</code></p>
+<p>安装成功后，执行上传命令：</p>
+<p><code>hexo deploy(简写： hexo d)</code></p>
+<h3 id="浏览线上效果"><a href="#浏览线上效果" class="headerlink" title="浏览线上效果"></a>浏览线上效果</h3><p>然后再浏览器中输入<a href="http://yourGithubUsername.github.io/就行啦！" target="_blank" rel="noopener">http://yourGithubUsername.github.io/就行啦！</a></p>
+<hr>
+<p><strong>补充：</strong></p>
+<p>每次在本地发表文章的步骤是：</p>
+<p>发布markdown文章<br>hexo框架支持markdown文档和语法，所有博客添加在source/_post目录下：</p>
+<p><img src="/assets/images/img7.png" alt=""></p>
+<p>博客写好后，执行部署指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h4 id="hexo-d报错集锦："><a href="#hexo-d报错集锦：" class="headerlink" title="hexo d报错集锦："></a>hexo d报错集锦：</h4><h5 id="情况一"><a href="#情况一" class="headerlink" title="情况一"></a>情况一</h5><p><img src="/assets/images/img13.png" alt=""></p>
+<p>解决方法：</p>
+<p><code>git config --global core.autocrlf false</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/12/useHexoToBuildBlog/" data-id="cjblwfuot0008au0jr0jmf34g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/12/crossOrigin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端解决跨域问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/18/displayFlex/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">详解display:box</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-icon" class="inner">
+      <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+      <a id="nav-envelope-link" class="nav-icon" href="https://yuanbao.i.jj@gmail.com"></a>
+      <a id="nav-weibo-link" class="nav-icon" href="https://weibo.com"></a>
+    </div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 YuanBao<br>
+      Powered by Magic
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

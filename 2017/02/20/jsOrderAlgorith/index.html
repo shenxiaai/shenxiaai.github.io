@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JS排序算法 | 元宝君的时光</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="冒泡排序123456789101112131415//冒泡排序function bubbleSort (arr)&amp;#123;    for(var i=0;i&amp;lt;arr.length-1;i++)&amp;#123;        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;            if(arr[i]&amp;gt;arr[j])&amp;#123;//如果前面的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS排序算法">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/jsOrderAlgorith/index.html">
+<meta property="og:site_name" content="元宝君的时光">
+<meta property="og:description" content="冒泡排序123456789101112131415//冒泡排序function bubbleSort (arr)&amp;#123;    for(var i=0;i&amp;lt;arr.length-1;i++)&amp;#123;        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;            if(arr[i]&amp;gt;arr[j])&amp;#123;//如果前面的数">
+<meta property="og:updated_time" content="2017-12-22T08:52:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS排序算法">
+<meta name="twitter:description" content="冒泡排序123456789101112131415//冒泡排序function bubbleSort (arr)&amp;#123;    for(var i=0;i&amp;lt;arr.length-1;i++)&amp;#123;        for(var j=i+1;j&amp;lt;arr.length;j++)&amp;#123;            if(arr[i]&amp;gt;arr[j])&amp;#123;//如果前面的数">
+  
+    <link rel="alternate" href="/atom.xml" title="元宝君的时光" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+        <header id="post-header">
+    <div id="post-banner"></div>
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <!-- <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai" title="RSS Feed"></a> -->
+                    <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+                
+                <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+      
+      <div class="outer">
+        <section id="main"><article id="post-jsOrderAlgorith" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/20/jsOrderAlgorith/" class="article-date">
+  <time datetime="2017-02-19T16:00:00.000Z" itemprop="datePublished">2017-02-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 id="post-article-title" class="article-title" itemprop="name">
+      JS排序算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//冒泡排序</span><br><span class="line">function bubbleSort (arr)&#123;</span><br><span class="line">    for(var i=0;i&lt;arr.length-1;i++)&#123;</span><br><span class="line">        for(var j=i+1;j&lt;arr.length;j++)&#123;</span><br><span class="line">            if(arr[i]&gt;arr[j])&#123;//如果前面的数据比后面的大就交换</span><br><span class="line">                var temp=arr[i];</span><br><span class="line">                arr[i]=arr[j];</span><br><span class="line">                arr[j]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line">console.log(&quot;The result is:&quot; + bubbleSort(arr));</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//快速排序</span><br><span class="line">function quickSort (arr)&#123;</span><br><span class="line">    //如果数组长度小于等于1无需判断直接返回即可</span><br><span class="line">    if(arr.length&lt;=1)&#123;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line">    var midIndex = Math.floor(arr.length / 2);	//取基准点</span><br><span class="line">    var midIndexVal = arr.splice(midIndex, 1);	//取基准点的值,splice(index,1)函数可以返回数组中被删除的那个数arr[index+1]</span><br><span class="line">    var left = [];	//存放比基准点小的数组</span><br><span class="line">    var right = [];	//存放比基准点大的数组</span><br><span class="line">    //遍历数组，进行判断分配</span><br><span class="line">    for(var i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        if(arr[i] &lt; midIndexVal)&#123;</span><br><span class="line">            left.push(arr[i]);	//比基准点小的放在左边数组</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            right.push(arr[i]);	//比基准点大的放在右边数组</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(arr);</span><br><span class="line">    &#125;</span><br><span class="line">    //递归执行以上操作,对左右两个数组进行操作，直到数组长度为&lt;=1；</span><br><span class="line">    return quickSort(left).concat(midIndexVal,quickSort(right));</span><br><span class="line">&#125;;</span><br><span class="line">console.log(quickSort(arr));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/20/jsOrderAlgorith/" data-id="cjblwfuor0007au0j7l1r7ft2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/01/useKoa2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用Koa2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/19/installAtomPlugin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">安装atom插件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-icon" class="inner">
+      <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+      <a id="nav-envelope-link" class="nav-icon" href="https://yuanbao.i.jj@gmail.com"></a>
+      <a id="nav-weibo-link" class="nav-icon" href="https://weibo.com"></a>
+    </div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 YuanBao<br>
+      Powered by Magic
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

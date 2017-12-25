@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTML5 Web存储——localStorage | 元宝君的时光</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自从开始做H5开发以后，接触了很多h5的新特性，今天元宝君就来说一下H5的新存储属性。 localStorage是H5新增的特性，主要功能是本地存储，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持近5M大小，不同的浏览器中localStorage会有所不同。 一、localStorage的优缺点localStorag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Web存储——localStorage">
+<meta property="og:url" content="http://yoursite.com/2016/04/12/html5Storage/index.html">
+<meta property="og:site_name" content="元宝君的时光">
+<meta property="og:description" content="自从开始做H5开发以后，接触了很多h5的新特性，今天元宝君就来说一下H5的新存储属性。 localStorage是H5新增的特性，主要功能是本地存储，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持近5M大小，不同的浏览器中localStorage会有所不同。 一、localStorage的优缺点localStorag">
+<meta property="og:image" content="http://yoursite.com/assets/images/img11.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/images/img12.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/images/img13.jpg">
+<meta property="og:updated_time" content="2017-12-22T08:57:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 Web存储——localStorage">
+<meta name="twitter:description" content="自从开始做H5开发以后，接触了很多h5的新特性，今天元宝君就来说一下H5的新存储属性。 localStorage是H5新增的特性，主要功能是本地存储，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持近5M大小，不同的浏览器中localStorage会有所不同。 一、localStorage的优缺点localStorag">
+<meta name="twitter:image" content="http://yoursite.com/assets/images/img11.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="元宝君的时光" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+        <header id="post-header">
+    <div id="post-banner"></div>
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <!-- <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai" title="RSS Feed"></a> -->
+                    <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+                
+                <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+      
+      <div class="outer">
+        <section id="main"><article id="post-html5Storage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/12/html5Storage/" class="article-date">
+  <time datetime="2016-04-11T16:00:00.000Z" itemprop="datePublished">2016-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 id="post-article-title" class="article-title" itemprop="name">
+      HTML5 Web存储——localStorage
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自从开始做H5开发以后，接触了很多h5的新特性，今天元宝君就来说一下H5的新存储属性。</p>
+<p>localStorage是H5新增的特性，主要功能是本地存储，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持近5M大小，不同的浏览器中localStorage会有所不同。</p>
+<h1 id="一、localStorage的优缺点"><a href="#一、localStorage的优缺点" class="headerlink" title="一、localStorage的优缺点"></a>一、localStorage的优缺点</h1><h2 id="localStorage的优点"><a href="#localStorage的优点" class="headerlink" title="localStorage的优点"></a>localStorage的优点</h2><ol>
+<li>localStorage拓展了cookie的4K限制</li>
+<li>localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽（<em>仅在高版本的浏览器中支持</em>）</li>
+</ol>
+<h2 id="localStorage的缺点"><a href="#localStorage的缺点" class="headerlink" title="localStorage的缺点"></a>localStorage的缺点</h2><ol>
+<li>各个浏览器localstorage的大小不同</li>
+<li>仅IE8以上支持</li>
+<li>localstorage限定为string类型，需要<strong>JSON.stringify()</strong>和<strong>JSON.parse()</strong>方法转换</li>
+<li>localStorage在浏览器的<strong>隐私模式</strong>下不可读取</li>
+<li>localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，导致页面卡顿</li>
+<li>localStorage不能被爬虫抓取到</li>
+</ol>
+<h1 id="二、sessionStorage"><a href="#二、sessionStorage" class="headerlink" title="二、sessionStorage"></a>二、sessionStorage</h1><p>sessionStorage 方法针对一个 session 进行数据存储。<strong>当用户关闭浏览器窗口后，数据会被删除。</strong></p>
+<h1 id="三、使用localStorage"><a href="#三、使用localStorage" class="headerlink" title="三、使用localStorage"></a>三、使用localStorage</h1><h2 id="判断浏览器是否支持localStorage"><a href="#判断浏览器是否支持localStorage" class="headerlink" title="判断浏览器是否支持localStorage"></a>判断浏览器是否支持localStorage</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(!window.localStorage)&#123;</span><br><span class="line">    alert(&apos;浏览器不支持localstorage!&apos;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    alert(&quot;浏览器支持localstorage&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="IE7"><a href="#IE7" class="headerlink" title="IE7"></a>IE7</h3><p><img src="/assets/images/img11.jpg" alt=""></p>
+<h3 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h3><p><img src="/assets/images/img12.jpg" alt=""></p>
+<h2 id="写入localStorage"><a href="#写入localStorage" class="headerlink" title="写入localStorage"></a>写入localStorage</h2><p>写入localStroage有三种方法，推荐使用<strong>setItem</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var storage=window.localStorage;</span><br><span class="line">storage[&quot;a&quot;]=1;</span><br><span class="line">   storage.a=1;</span><br><span class="line">   storage.setItem(&quot;a&quot;,1);	//三种写法任意使用一个</span><br><span class="line">console.log(typeof(storage.a));</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="/assets/images/img13.jpg" alt=""></p>
+<h2 id="读取localStorage"><a href="#读取localStorage" class="headerlink" title="读取localStorage"></a>读取localStorage</h2><p>读取localStroage同样有三种方法，推荐使用<strong>getItem</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var storage=window.localStorage;</span><br><span class="line">var result = storage[&quot;a&quot;];</span><br><span class="line">   var result = storage.a;</span><br><span class="line">   var result = storage.getItem(&quot;a&quot;);	//三种写法任意使用一个</span><br><span class="line">console.log(result);</span><br></pre></td></tr></table></figure>
+<h2 id="删除全部localStorage"><a href="#删除全部localStorage" class="headerlink" title="删除全部localStorage"></a>删除全部localStorage</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var storage=window.localStorage;</span><br><span class="line">storage.setItem(&quot;a&quot;,3);</span><br><span class="line">storage.clear();</span><br></pre></td></tr></table></figure>
+<h2 id="删除localStorage中的一条"><a href="#删除localStorage中的一条" class="headerlink" title="删除localStorage中的一条"></a>删除localStorage中的一条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var storage=window.localStorage;</span><br><span class="line">storage.setItem(&quot;a&quot;,3);</span><br><span class="line">storage.removeItem(&quot;a&quot;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>特别提醒：<br>将JSON存入localStorage中时会被自动转换成为字符串形式，此时可以使用<strong>JSON.stringify()</strong>方法将JSON转换成为JSON字符串；在读取JSON型localStorage时，使用<strong>JSON.parse()</strong>方法读将JSON字符串转换成为JSON对象。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/12/html5Storage/" data-id="cjblwfuon0004au0jxf2v939h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/18/displayFlex/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          详解display:box
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-icon" class="inner">
+      <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+      <a id="nav-envelope-link" class="nav-icon" href="https://yuanbao.i.jj@gmail.com"></a>
+      <a id="nav-weibo-link" class="nav-icon" href="https://weibo.com"></a>
+    </div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 YuanBao<br>
+      Powered by Magic
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>解决vue在build之后css中image路径错误问题 | 元宝君的时光</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在vue的conponents中，我们经常需要写style scoped，但是不知道你们有木有遇到过需要写background-image的时候，一般大家都把image资源放在哪儿呢？ 在npm run dev，开发状态，无论image放在/src中，还是/src/assets中、或者在/static中，在components中都是可以引用到的~ 一如vue-cli的API文档中写的：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决vue在build之后css中image路径错误问题">
+<meta property="og:url" content="http://yoursite.com/2017/06/01/vuestaticURLerror/index.html">
+<meta property="og:site_name" content="元宝君的时光">
+<meta property="og:description" content="在vue的conponents中，我们经常需要写style scoped，但是不知道你们有木有遇到过需要写background-image的时候，一般大家都把image资源放在哪儿呢？ 在npm run dev，开发状态，无论image放在/src中，还是/src/assets中、或者在/static中，在components中都是可以引用到的~ 一如vue-cli的API文档中写的：">
+<meta property="og:image" content="http://yoursite.com/assets/images/img28.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/images/img29.jpg">
+<meta property="og:image" content="http://yoursite.com/assets/images/img30.jpg">
+<meta property="og:updated_time" content="2017-12-25T07:41:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决vue在build之后css中image路径错误问题">
+<meta name="twitter:description" content="在vue的conponents中，我们经常需要写style scoped，但是不知道你们有木有遇到过需要写background-image的时候，一般大家都把image资源放在哪儿呢？ 在npm run dev，开发状态，无论image放在/src中，还是/src/assets中、或者在/static中，在components中都是可以引用到的~ 一如vue-cli的API文档中写的：">
+<meta name="twitter:image" content="http://yoursite.com/assets/images/img28.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="元宝君的时光" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+        <header id="post-header">
+    <div id="post-banner"></div>
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <!-- <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai" title="RSS Feed"></a> -->
+                    <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+                
+                <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+      
+      <div class="outer">
+        <section id="main"><article id="post-vuestaticURLerror" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/vuestaticURLerror/" class="article-date">
+  <time datetime="2017-05-31T16:00:00.000Z" itemprop="datePublished">2017-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 id="post-article-title" class="article-title" itemprop="name">
+      解决vue在build之后css中image路径错误问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在vue的conponents中，我们经常需要写style scoped，但是不知道你们有木有遇到过需要写background-image的时候，一般大家都把image资源放在哪儿呢？</p>
+<p>在npm run dev，开发状态，无论image放在/src中，还是/src/assets中、或者在/static中，在components中都是可以引用到的~ 一如vue-cli的API文档中写的：</p>
+<a id="more"></a>
+<ul>
+<li>相对路径 ./assets/logo.png 被视为模块依赖</li>
+<li>无前缀 assets/logo.png 被视为相对路径</li>
+<li>使用 ~ 被视为 require(‘some-module/image.png’)</li>
+</ul>
+<p><img src="/assets/images/img28.jpg" alt=""></p>
+<p><a href="https://ajimide.gitbooks.io/key-vue-cli-webpack/5.%20Handing%20Static%20Assets.html" target="_blank" rel="noopener">具体可参考vue-cli API</a></p>
+<p>但是，当我们npm run build把项目打包，准备放到服务器上跟后台联调的时候，有木有发现，你直接打开/dist目录下的index.html页面是空白的，或者background-image都没有显示？</p>
+<p>这里，还是上面vue-cli的url-loader打包工具出了问题。</p>
+<p>元宝君现在也没有找到最佳的解决方案，暂时可以用下面这种方法解决：</p>
+<ol>
+<li>首先，把css/images/js资源放到assets中：</li>
+</ol>
+<p><img src="/assets/images/img29.jpg" alt=""></p>
+<ol>
+<li>第二步，安装anywhere<blockquote>
+<p>Anywhere 是一个基于node.js的静态文件服务器工具，主要使用了express提供的两个中间件：serve-index和serve-static。具有使用简单快速、安装方便的优点，大多数场景下使用apache的静态文件服务器非常的臃肿，诸多特性用不到，配置复杂。而一些基于node.js的静态文件服务器大都配置简单甚至无需配置，方便在一些小的场景下使用。</p>
+</blockquote>
+</li>
+</ol>
+<p><code>npm install anywhere -g</code></p>
+<ol>
+<li>进入项目中的dist目录下，运行：</li>
+</ol>
+<p><code>anywhere -s</code></p>
+<blockquote>
+<p>anywhere //不带任何参数，使用默认的8000端口，当前路径作为静态文件服务器根路径<br>anywhere 8888 //使用8888端口<br>anywhere -p 8989 //使用8989端口<br>anywhere -s //启动后是否打开浏览器<br>anywhere -h localhost //指定主机名（ip地址）<br>anywhere -d /home //指定静态文件服务器根路径为/home</p>
+</blockquote>
+<p>此时，在浏览器上打开localhost:8000页面就可以看到完整的打包好的项目啦！</p>
+<ol>
+<li>补充一个方法：</li>
+</ol>
+<p><img src="/assets/images/img30.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/01/vuestaticURLerror/" data-id="cjblwfuox000dau0jrbwfmca9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/01/useKoa2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用Koa2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-icon" class="inner">
+      <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+      <a id="nav-envelope-link" class="nav-icon" href="https://yuanbao.i.jj@gmail.com"></a>
+      <a id="nav-weibo-link" class="nav-icon" href="https://weibo.com"></a>
+    </div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 YuanBao<br>
+      Powered by Magic
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>前端解决跨域问题 | 元宝君的时光</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.CORSCORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端解决跨域问题">
+<meta property="og:url" content="http://yoursite.com/2016/11/12/crossOrigin/index.html">
+<meta property="og:site_name" content="元宝君的时光">
+<meta property="og:description" content="1.CORSCORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。">
+<meta property="og:updated_time" content="2017-12-25T07:40:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端解决跨域问题">
+<meta name="twitter:description" content="1.CORSCORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。">
+  
+    <link rel="alternate" href="/atom.xml" title="元宝君的时光" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      
+        <header id="post-header">
+    <div id="post-banner"></div>
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <a class="main-nav-link" href="/">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <!-- <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai" title="RSS Feed"></a> -->
+                    <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+                
+                <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+      
+      <div class="outer">
+        <section id="main"><article id="post-crossOrigin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/12/crossOrigin/" class="article-date">
+  <time datetime="2016-11-11T16:00:00.000Z" itemprop="datePublished">2016-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 id="post-article-title" class="article-title" itemprop="name">
+      前端解决跨域问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-CORS"><a href="#1-CORS" class="headerlink" title="1.CORS"></a>1.CORS</h2><p><strong>CORS</strong>（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function (req, res, next) &#123;</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Origin&apos;, &apos;*&apos;);</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Headers&apos;, &apos;Content-Type,Content-Length, Authorization, Accept,X-Requested-With&apos;);</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Methods&apos;,&apos;PUT,POST,GET,DELETE,OPTIONS&apos;);</span><br><span class="line">  res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">  if (req.method == &apos;OPTIONS&apos;) &#123;</span><br><span class="line">    res.send(200);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    next();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="2-document-domain"><a href="#2-document-domain" class="headerlink" title="2.document.domain"></a>2.document.domain</h2><p>将页面的document.domain设置为相同的值，页面间可以互相访问对方的JavaScript对象。<br>注意：<br>不能将值设置为URL中不包含的域；<br>松散的域名不能再设置为紧绷的域名。</p>
+<h2 id="3-图像Ping"><a href="#3-图像Ping" class="headerlink" title="3.图像Ping"></a>3.图像Ping</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var img=new Image();</span><br><span class="line">img.onload=img.onerror=function()&#123;</span><br><span class="line">... ...</span><br><span class="line">&#125;</span><br><span class="line">img.src=&quot;url?name=value&quot;;</span><br></pre></td></tr></table></figure>
+<p>请求数据通过查询字符串的形式发送，响应可以是任意内容，通常是像素图或204响应。<br>图像Ping最常用于跟踪用户点击页面或动态广告曝光次数。<br>缺点：<br>只能发送GET请求；<br>无法访问服务器的响应文本，只能用于浏览器与服务器间的单向通信。</p>
+<h2 id="4-Jsonp"><a href="#4-Jsonp" class="headerlink" title="4.Jsonp"></a>4.Jsonp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var script=document.createElement(&quot;script&quot;);</span><br><span class="line">script.src=&quot;url?callback=handleResponse&quot;;</span><br><span class="line">document.body.insertBefore(script,document.body.firstChild);</span><br></pre></td></tr></table></figure>
+<p>JSONP由两部分组成：回调函数和数据<br>回调函数是接收到响应时应该在页面中调用的函数，其名字一般在请求中指定。<br>数据是传入回调函数中的JSON数据。<br>优点：<br>能够直接访问响应文本，可用于浏览器与服务器间的双向通信。<br>缺点：<br>JSONP从其他域中加载代码执行，其他域可能不安全；<br>难以确定JSONP请求是否失败。</p>
+<h2 id="5-Comet"><a href="#5-Comet" class="headerlink" title="5.Comet"></a>5.Comet</h2><p>Comet可实现服务器向浏览器推送数据。<br>Comet是实现方式：长轮询和流<br>短轮询即浏览器定时向服务器发送请求，看有没有数据更新。<br>长轮询即浏览器向服务器发送一个请求，然后服务器一直保持连接打开，直到有数据可发送。发送完数据后，浏览器关闭连接，随即又向服务器发起一个新请求。其优点是所有浏览器都支持，使用XHR对象和setTimeout()即可实现。<br>流即浏览器向服务器发送一个请求，而服务器保持连接打开，然后周期性地向浏览器发送数据，页面的整个生命周期内只使用一个HTTP连接。</p>
+<h2 id="6-WebSocket"><a href="#6-WebSocket" class="headerlink" title="6.WebSocket"></a>6.WebSocket</h2><p>WebSocket可在一个单独的持久连接上提供全双工、双向通信。<br>WebSocket使用自定义协议，未加密的连接时ws://；加密的链接是wss://。<br>var webSocket=new WebSocket(“ws://“);<br>webSocket.send(message);<br>webSocket.onmessage=function(event){<br>var data=event.data;<br>… ….<br>}</p>
+<blockquote>
+<p>注意：</p>
+</blockquote>
+<p>必须给WebSocket构造函数传入绝对URL；<br>WebSocket可以打开任何站点的连接，是否会与某个域中的页面通信，完全取决于服务器；<br>WebSocket只能发送纯文本数据，对于复杂的数据结构，在发送之前必须进行序列化JSON.stringify(message))。<br>优点：<br>在客户端和服务器之间发送非常少的数据，减少字节开销。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/12/crossOrigin/" data-id="cjblwfuob0000au0jr3aof4yc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/25/forbidMobileSwipe/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          禁止手机浏览器、微信浏览器的上下滑动问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/12/useHexoToBuildBlog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo搭建Github博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-icon" class="inner">
+      <a id="nav-github-link" class="nav-icon" href="https://github.com/shenxiaai"></a>
+      <a id="nav-envelope-link" class="nav-icon" href="https://yuanbao.i.jj@gmail.com"></a>
+      <a id="nav-weibo-link" class="nav-icon" href="https://weibo.com"></a>
+    </div>
+    <div id="footer-info" class="inner">
+      &copy; 2017 YuanBao<br>
+      Powered by Magic
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
