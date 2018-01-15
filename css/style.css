@@ -596,6 +596,10 @@ a.article-title:hover {
 .article-entry dl {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
+  list-style: circle;
+}
+.article-entry li {
+  list-style: circle;
 }
 .article-entry img,
 .article-entry video {

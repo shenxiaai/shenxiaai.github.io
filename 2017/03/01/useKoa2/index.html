@@ -95,6 +95,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+
+        <!-- Table of Contents L23-L29 yuanbao add 文章目录 -->
+        
+
         <h1 id="自定义方式"><a href="#自定义方式" class="headerlink" title="自定义方式"></a>自定义方式</h1><h2 id="安装koa"><a href="#安装koa" class="headerlink" title="安装koa"></a>安装koa</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node install -g koa(或node install koa --save)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="新建一个app-js文件："><a href="#新建一个app-js文件：" class="headerlink" title="新建一个app.js文件："></a>新建一个app.js文件：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var koa = require(&apos;koa&apos;);</span><br><span class="line">var app = new koa();</span><br><span class="line">app.use(function *()&#123;</span><br><span class="line">  this.body = &apos;Hello World&apos;;</span><br><span class="line">&#125;);</span><br><span class="line">app.listen(3000);</span><br><span class="line">console.log(&apos;Koa app started at port 3000...&apos;);</span><br></pre></td></tr></table></figure>
@@ -120,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/01/useKoa2/" data-id="cjcbnbg9n000bvu0j0oxg35ze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/01/useKoa2/" data-id="cjcg0fmdk000bob0j2waykf51" class="article-share-link">Share</a>
       
       
     </footer>

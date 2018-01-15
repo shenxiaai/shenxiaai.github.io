@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/12/crossOrigin/index.html">
 <meta property="og:site_name" content="元宝君的时光机">
 <meta property="og:description" content="1.CORSCORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。">
-<meta property="og:updated_time" content="2017-12-25T07:40:09.000Z">
+<meta property="og:updated_time" content="2018-01-12T09:56:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端解决跨域问题">
 <meta name="twitter:description" content="1.CORSCORS（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。">
@@ -88,6 +88,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+
+        <!-- Table of Contents L23-L29 yuanbao add 文章目录 -->
+        
+          <div id="toc" class="toc-article">
+            <strong class="toc-title">文章目录</strong>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CORS"><span class="toc-text">1.CORS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-document-domain"><span class="toc-text">2.document.domain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-图像Ping"><span class="toc-text">3.图像Ping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Jsonp"><span class="toc-text">4.Jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Comet"><span class="toc-text">5.Comet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-WebSocket"><span class="toc-text">6.WebSocket</span></a></li></ol>
+          </div>
+        
+
         <h2 id="1-CORS"><a href="#1-CORS" class="headerlink" title="1.CORS"></a>1.CORS</h2><p><strong>CORS</strong>（Corss-Origin Resource Sharing,跨资源共享），基本思想是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应的成功或失败。即给请求附加一个额外的Origin头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部决定是否给予响应。</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function (req, res, next) &#123;</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Origin&apos;, &apos;*&apos;);</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Headers&apos;, &apos;Content-Type,Content-Length, Authorization, Accept,X-Requested-With&apos;);</span><br><span class="line">  res.header(&apos;Access-Control-Allow-Methods&apos;,&apos;PUT,POST,GET,DELETE,OPTIONS&apos;);</span><br><span class="line">  res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">  if (req.method == &apos;OPTIONS&apos;) &#123;</span><br><span class="line">    res.send(200);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    next();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -106,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/12/crossOrigin/" data-id="cjcbnbg910000vu0j4iihz97n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/12/crossOrigin/" data-id="cjcg0fmd20000ob0jqfdg8t8y" class="article-share-link">Share</a>
       
       
     </footer>
