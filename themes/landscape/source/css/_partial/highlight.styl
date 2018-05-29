@@ -26,6 +26,7 @@ $line-numbers
   font-size: 0.85em
 
 .article-entry
+  font-weight: 300
   pre, code
     font-family: font-mono
   code
@@ -34,6 +35,7 @@ $line-numbers
     padding: 0 0.3em
   pre
     @extend $code-block
+    padding: 15px
     code
       background: none
       text-shadow: none
@@ -155,3 +157,15 @@ pre
   .keyword
   .javascript .function
     color: highlight-purple
+
+.toc-article
+  position: absolute
+  top: 390px
+  right: 200px
+  font-family: PingFang SC
+  font-weight: 300
+  li
+    list-style: none
+    span
+      display: inline-block
+      margin: 3px 0
